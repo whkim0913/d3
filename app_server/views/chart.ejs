@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/chart.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>D3 Server-side Demo</title>
+</head>
+<body>
+<h1>Line Chart Demo</h1>
+<form action="/chart/create" method="post">
+    <table border="1">
+        <tr>
+            <td>ITEMID</td>
+            <td><input type="text" id="itemId" name="itemId" value=""/></td>
+            <td><button type="button" id="search">조회</button></td>
+        </tr>
+    </table>
+    <div id="test"></div>
+</form>
+<script src="../util/lineChart.js"></script>
+<script>
+
+    $(document).ready(function () {
+       $('#search').on('click', function () {
+           onSearchSubmit();
+       }) ;
+    });
+
+    function onSearchSubmit(){
+        var data = {};
+        data.itemId = $('#itemId').val();
+
+        $.ajax({
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            url: 'http://localhost:3000/chart/create',
+            success: function(data){
+                getLineChart({
+                    data: data,
+                    width: 1000,
+                    height: 600,
+                    xAxisLabel: '시간',
+                    yAxisLabel: 'Value',
+                    containerId: 'line-chart-small'
+                });
+            }
+        });
+
+    }
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

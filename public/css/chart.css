@@ -1,0 +1,23 @@
+.svg-chart .background {
+    shape-rendering: crispEdges;
+    stroke: #ccc;
+    fill: #fdfdfd;
+    stroke-width: 1px;
+}
+
+.line {
+    fill: none;
+    stroke: #F08080;
+    stroke-width: 2px;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #555;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    fill: #555;
+    font-size: 14px;
+}

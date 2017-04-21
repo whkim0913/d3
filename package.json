@@ -1,0 +1,24 @@
+{
+  "name": "d3chart",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.3.0",
+    "body-parser": "~1.17.1",
+    "bower": "^1.8.0",
+    "cookie-parser": "~1.4.3",
+    "d3": "^3.5.17",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "es6-promise": "^4.1.0",
+    "express": "~4.15.2",
+    "jsdom": "^9.12.0",
+    "morgan": "~1.8.1",
+    "nodemon": "^1.11.0",
+    "oracledb": "^1.13.1",
+    "serve-favicon": "~2.4.2"
+  }
+}
